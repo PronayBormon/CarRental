@@ -11,6 +11,7 @@
 
 :root {
     --color_primary: #dbbf87;
+    --color_primary-hover: #9a7d43;
 }
 
 body {
@@ -39,7 +40,7 @@ body {
 }
 
 .navbar-brand img {
-    height: 60px;
+    height: 85px;
 
     width: 100%;
 
@@ -146,9 +147,9 @@ body {
 
 .sec_title h1 {
 
-    font-size: 40px;
+    font-size: 60px;
 
-    line-height: 35px;
+    line-height: 55px;
 
     color: #fff;
 }
@@ -542,23 +543,23 @@ body {
 
 .btn_sc {
 
-    padding: 10px;
+padding: 10px;
 
-    border: 1px solid var(--color_primary);
+border: 1px solid var(--color_primary) !important;
 
-    text-decoration: none;
+text-decoration: none;
 
-    color: #000;
+color: #000;
 
-    margin-top: 12px;
+margin-top: 12px;
 
-    display: block;
+display: block;
 
-    width: fit-content;
+width: fit-content;
 
-    transition: .4s all ease-in-out;
+transition: .4s all ease-in-out;
 
-    color: var(--color_primary);
+color: var(--color_primary);
 }
 
 .btn_sc:hover {
@@ -747,6 +748,7 @@ footer {}
 .footer_bottom p,
 a {
     color: #fff;
+    margin: 0;
 }
 
 .log_ab {}
@@ -768,7 +770,9 @@ a {
 }
 
 .address a {}
-
+.address a i{
+    font-size: 22px;
+}
 
 .page_barccard {
     background-image: url(../images/PORSHE.jpg);
@@ -914,7 +918,7 @@ a {
 
 .service_ h1 {
     color: #fff;
-    font-size: 22px;
+    font-size: 30px;
     margin-top: 20px;
 }
 
@@ -1015,20 +1019,23 @@ a {
 
 .pro_slide h1 {
 
-    color: var(--color_primary);
+color: var(--color_primary);
 
-    margin-top: 80px;
+margin-top: 80px;
 
-    font-size: 24px;
+font-size: 22px;
 
-    opacity: 0;
+opacity: 0;
 
-    transition: .4s all ease-in-out;
+transition: .4s all ease-in-out;
 
-    font-family: "Work Sans", sans-serif;
-    position: absolute;
-    left: 20px;
-    bottom: 85px;
+font-family: "Work Sans", sans-serif;
+
+position: absolute;
+
+left: 20px;
+
+bottom: 85px;
 }
 
 .pro_slide h1 span {
@@ -1037,33 +1044,36 @@ a {
 
 .pro_slide h2 {
 
-    /* margin-bottom: 25px; */
+/* margin-bottom: 25px; */
 
-    font-size: 18px;
+font-size: 24px;
 
-    color: #fff;
+color: #fff;
 
-    transform: translateY(22px);
+transform: translateY(22px);
 
-    transition: .4s all ease-in-out;
+transition: .4s all ease-in-out;
 
-    filter: drop-shadow(2px 4px 6px black);
+filter: drop-shadow(2px 4px 6px black);
 
-    font-family: "Work Sans", sans-serif;
+font-family: "Work Sans", sans-serif;
 
-    overflow: hidden;
+overflow: hidden;
 
-    display: -webkit-box;
+display: -webkit-box;
 
-    -webkit-line-clamp: 1;
+-webkit-line-clamp: 1;
     /* number of lines to show */
 
-    line-clamp: 2;
+line-clamp: 2;
 
-    -webkit-box-orient: vertical;
-    position: absolute;
-    left: 20px;
-    bottom: 59px;
+-webkit-box-orient: vertical;
+
+position: absolute;
+
+left: 20px;
+
+bottom: 59px;
 }
 
 .pro_slide p {
@@ -1191,12 +1201,19 @@ nav button {
     box-shadow: none !important;
 }
 
-.bg_color {}
+.bg_color {height: 115px;}
 
 .bg_color .nav-link {
     color: #fff !important;
+    font-size: 16px;
+    margin: 0px 8px;
+    transition: .4s all ease-in-out;
+    padding: 5px 0px;
+    border: 1px solid transparent;
 }
-
+.bg_color .nav-link:hover{
+    border-bottom: 1px solid #fff;    
+}
 .loader {
 
     height: 100vh;
@@ -1225,4 +1242,77 @@ nav button {
 .loader img {
 
     max-height: 100px;
+}
+
+/* banner part start here  */
+.bannerPart {
+    background-image: url(../images/COVETTE.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+    padding: 30px 0px;
+    min-height: 60vh;
+}
+
+.bannerPart::after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: #00000070;
+    z-index: -1;
+    left: 0;
+    top: 0;
+}
+
+/* banner part end here  */
+.btn-primary{
+    background-color: var(--color_primary);
+}
+.btn-primary:hover{
+    background-color: var(--color_primary-hover);
+}
+a:hover{
+    color: var(--color_primary);
+}
+.prolist p{
+    margin: 0;
+    color: #000;   
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 1; 
+    -webkit-box-orient: vertical;
+}
+.prolist img{
+    max-height: 130px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.form-control:focus {
+    box-shadow: none;
+}
+.g_img img{
+    transition: .4s all ease-in-out;
+}
+.g_img:hover img{
+    transform: scale(1.1);
+}
+.head_i i{
+    font-size: 14px !important;
+    margin-right: 5px;
+}
+.head_i ul{
+    margin: 0;
+}
+@media(max-width: 992px){
+    .navbar-brand img {
+        height: 70px;
+    }
+    .bg_color {
+        height: 90px;
+    }
 }

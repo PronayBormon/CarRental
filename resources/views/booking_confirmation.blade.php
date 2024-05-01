@@ -84,7 +84,7 @@
                         success: function(response) {
                             if (response.success) {
                                 // Payment status updated successfully, redirect to success page or perform other actions
-                                window.location.href = "{{ url('/') }}";
+                                window.location.href = "{{ url('orderComplete') }}";
                             } else {
                                 // Handle errors or display a message to the user
                                 console.error('Error updating payment status:', response.error);

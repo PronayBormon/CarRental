@@ -82,8 +82,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header text-center py-3">{{ __('Login') }}</div>
-
+                    <div class="card-header text-center py-3">Welcome to {{ __('Login') }}</div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-8 m-auto">

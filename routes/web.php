@@ -27,16 +27,32 @@ Route::get('/', function () { //about
 Route::get("/", [pageController::class, "index"]);
 Route::get("singleCar/{slug}", [pageController::class, "singleCar"])->name("single-car");
 Route::get("cars", [pageController::class, "cars"]);
-// booking 
+//  
 Route::get("booking", [pageController::class, "booking"]);
+Route::get("/selectcars", [pageController::class, "selectcars"]);
+Route::get("/addCar", [pageController::class, "addCarsession"]);
+Route::get("/customer", [pageController::class, "customer_details"]);
+Route::post("orderSubmit", [pageController::class, "orderSubmit"]);
+
+
 Route::post("add_booking", [pageController::class, "add_booking"]);
 Route::get("booking/{id}", [pageController::class, "bookingid"]);
 Route::post("payment/success", [pageController::class, "paymentDone"]);
-Route::get("success", [pageController::class, "success"]);
+// Route::get("success", [pageController::class, "success"]);
+Route::get("orderComplete", [pageController::class, "success"]);
 
-// pages 
+Route::post("generate-client-secret ", [pageController::class, "generateclientsecret"]);
+// 
 Route::get("about-us", [pageController::class, "about"]);
 Route::get("contact-us", [pageController::class, "contact"]);
+Route::get("terms&condition", [pageController::class, "terms"]);
+
+
+
+
+
+
+
 
 // backend 
 Route::prefix("admin")->middleware('auth')->group(function () { //add-booking

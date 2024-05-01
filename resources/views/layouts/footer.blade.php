@@ -1,9 +1,12 @@
     <!-- footer links  -->
     <?php
-    // use Illuminate\Support\Facades\DB;
     
-    // $contacts = DB::table('contacts')->first();
-    // ?>
+    use Illuminate\Support\Facades\DB;
+    use App\Models\Contact;
+    
+    $contact = DB::table('contacts')->first();
+    
+    ?>
 
     <section class="footer_top py-5">
         <div class="container">
@@ -13,23 +16,23 @@
                         <img src="{{ url('frontend/images/logo.png') }}" class="img-fluid" style="max-width: 200px;"
                             alt="">
                     </a>
-                    <p>We provided Rental services in all three counties. PALM BEACH COUNTY, BROWARD COUNTY, DADE COUNTY.
+                    <p>{!!$contact->desc!!}
                     </p>
 
                 </div>
-                <div class="col-md-3 tab_hide">
+                <div class="col-md-3 col-6">
                     <div class="qcLink">
                         <h2>Important links</h2>
                         <ul>
-                            {{-- <li><a href="wedo.html#core">Core Service Areas</a></li>
-                            <li><a href="wedo.html#consult_model">Our Consulting Model</a></li> --}}
+                            {{-- <li><a href="wedo.html#consult_model">Our Consulting Model</a></li> --}}
                             <li><a href="{{ url('/') }}">Home</a></li>
                             <li><a href="{{ url('booking') }}">Booking </a></li>
-                            
+                            <li><a href="{{url('terms&condition')}}">Terms & Conditions</a></li>
+
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-3 tab_hide">
+                <div class="col-md-3 col-6">
                     <div class="qcLink">
                         <h2>Who We Are </h2>
                         <ul>
@@ -41,16 +44,20 @@
                 </div>
                 <div class="col-md-3 ">
                     <div class="address">
-                        <p class="fw-bold mb-0">Address </p>
-                        
-                    
-                        <a href="#" style="list-style: none;text-decoration: none;">7444 Royal Palm blvd Coral Springs FL 34953.</a>
+                        <p class="fw-bold mb-0"><strong>Address</strong>
+                        </p>
+
+                        <a href="#" style="list-style: none;text-decoration: none;">
+                                {{ $contact->address }}
+                        </a>
                         <ul class="d-flex justify-content-center mt-2 align-items-center"
                             style="list-style: none; padding: 0;">
-                            <li class="me-2"><a href="https://www.instagram.com/cloud9luxcars/"><i
+                            
+                            <li class="me-2"><a href="{{ $contact->instagram }}"><i
                                         class="fa-solid fa-brands fa-instagram"></i></a>
                             </li>
-                            <li class="me-2"><a href="#"><i class="fa-solid fa-brands fa-facebook"></i></a>
+                            
+                            <li class="me-2"><a href="{{ $contact->facebook }}"><i class="fa-solid fa-brands fa-facebook"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -72,3 +79,5 @@
             </div>
         </div>
     </footer>
+
+ 

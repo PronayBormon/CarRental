@@ -41,8 +41,7 @@
                             <td>
                                 <div class="btn-group">
                                     <a href="{{ url('admin/rentals_edit', $rental->id) }}" class="btn btn-primary">Edit</a>
-                                    <a href="{{url('admin/rental_details/'.$rental->id )}}" class="btn btn-secondary view-rental" >View</a>
-            
+                                    <a href="{{url('admin/rental_details/'.$rental->id )}}" class="btn btn-secondary view-rental" >View</a>            
 
                                 </div>
                             </td>

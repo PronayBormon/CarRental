@@ -74,7 +74,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="{{ url('booking/'.$cars->id) }}" class="btn_sc">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="{{ url('booking') }}" class="btn_sc">Book Now <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>

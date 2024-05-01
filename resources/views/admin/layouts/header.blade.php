@@ -17,7 +17,7 @@
         </div><!-- br-header-left -->
         <div class="br-header-right">
             <nav class="nav">
-                
+
                 <div class="dropdown">
                     <a href="#" class="nav-link nav-link-profile" data-toggle="dropdown">
                         <span class="logged-name hidden-md-down">Katherine</span>
@@ -35,15 +35,15 @@
                                 {{-- <a href="{{ route('logout') }}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</a> --}}
 
                                 <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                    {{ __('Logout') }}
+                                </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                            
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+
                             </li>
                         </ul>
                     </div><!-- dropdown-menu -->

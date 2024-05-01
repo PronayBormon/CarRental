@@ -47,10 +47,10 @@
                                     @endforeach
                                 </select>
                             </div>
-
+                        </div>
+                        <div class="col-md-6">
                             <div class="form-group mb-2">
-                                <label for="drop_location" class=" col-form-label text-md-right">Drop Location</label>
-
+                                <label for="drop_location" class="col-form-label text-md-right">Drop Location</label>
                                 <select id="drop_location" class="form-control @error('drop_location') is-invalid @enderror"
                                     name="drop_location" required>
                                     <option value="" selected disabled>Select Drop Location</option>
@@ -59,8 +59,6 @@
                                     @endforeach
                                 </select>
                             </div>
-                        </div>
-                        <div class="col-md-6">
                             <div class="form-group mb-2">
                                 <label for="return_date" class=" col-form-label text-md-right">Return Date</label>
                                 <input id="return_date" type="date"
@@ -89,6 +87,8 @@
 
                                 </select>
                             </div>
+                        </div>
+                        <div class="col-md-12">
                             <div class="form-group ">
                                 <label for="customer_name" class=" col-form-label text-md-right">Customer name</label>
                                 <input id="customer_name" required type="text"
@@ -96,10 +96,34 @@
                                     value="{{ old('customer_name') }}" required>
                             </div>
                             <div class="form-group ">
-                                <label for="contact_number" class=" col-form-label text-md-right">Contact Number</label>
-                                <input id="contact_number" required type="text"
-                                    class="form-control @error('contact_number') is-invalid @enderror" name="contact_number"
-                                    value="{{ old('contact_number') }}" required>
+                                <label for="phone" class=" col-form-label text-md-right">Phone</label>
+                                <input id="phone" required type="text"
+                                    class="form-control @error('phone') is-invalid @enderror" name="phone"
+                                    value="{{ old('phone') }}" required>
+                            </div>
+                            <div class="form-group ">
+                                <label for="email" class=" col-form-label text-md-right">Email</label>
+                                <input id="email" required type="text"
+                                    class="form-control @error('email') is-invalid @enderror" name="email"
+                                    value="{{ old('email') }}" required>
+                            </div>
+                            <div class="form-group ">
+                                <label for="address" class=" col-form-label text-md-right">Address 1</label>
+                                <input id="address" required type="text"
+                                    class="form-control @error('address') is-invalid @enderror" name="address"
+                                    value="{{ old('address') }}" required>
+                            </div>
+                            <div class="form-group ">
+                                <label for="address2" class=" col-form-label text-md-right">Address 2</label>
+                                <input id="address2" required type="text"
+                                    class="form-control @error('address2') is-invalid @enderror" name="address2"
+                                    value="{{ old('address2') }}" required>
+                            </div>
+                            <div class="form-group ">
+                                <label for="country" class=" col-form-label text-md-right">Country</label>
+                                <input id="country" required type="text"
+                                    class="form-control @error('country') is-invalid @enderror" name="country"
+                                    value="{{ old('country') }}" required>
                             </div>
                         </div>
                     </div>

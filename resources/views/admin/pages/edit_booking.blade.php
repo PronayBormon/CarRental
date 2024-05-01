@@ -49,9 +49,7 @@
                                         <option value="{{ $location->location }}" {{ $location->location == $rent->drop_location ? 'selected' : '' }}>{{ $location->location }}</option>
                                     @endforeach
                                 </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
+                            </div>                            
                             <div class="form-group mb-2">
                                 <label for="return_date" class="col-form-label text-md-right">Return Date</label>
                                 <input id="return_date" type="date" class="form-control" name="return_date" value="{{ $rent->return_date }}" required>
@@ -60,6 +58,8 @@
                                 <label for="drop_time" class="col-form-label text-md-right">Drop Time</label>
                                 <input id="drop_time" type="time" class="form-control" name="drop_time" value="{{ $rent->drop_time }}" required autofocus>
                             </div>
+                        </div>
+                        <div class="col-md-6">
                             <div class="form-group mb-2">
                                 <label for="rent_type" class="col-form-label text-md-right">Rent type</label>
                                 <select id="rent_type" class="form-control" name="rent_type" required>
@@ -85,7 +85,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="payment_status" class="col-form-label text-md-right">Approval Status</label>
+                                <label for="payment_status" class="col-form-label text-md-right">Payment Status</label>
                                 <select id="payment_status" class="form-control" name="payment_status" required>
                                     <option value="" selected disabled>Select Approval Status</option>
                                     <option value="1" {{ $rent->payment_status == 1 ? 'selected' : '' }}>Paid</option>

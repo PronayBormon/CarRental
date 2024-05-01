@@ -22,7 +22,7 @@
             margin: 0;
         }
 
-        i {
+        .card i {
             color: #9ABC66;
             font-size: 100px;
             line-height: 200px;

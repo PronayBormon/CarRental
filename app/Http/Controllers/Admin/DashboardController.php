@@ -19,7 +19,11 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('admin.pages.index');
+        $booking = Rental::latest()->take(5)->get();
+        $bookingCount = $booking->count();
+        $cars  = Car::all()->count();
+        $location  = Location::all()->count();
+        return view('admin.pages.index', compact('booking','bookingCount','cars','location'));
     }
 
     public function addLocation()
@@ -228,24 +232,30 @@ class DashboardController extends Controller
             $totalCost = 'Invalid Rent Type';
         }
 
-
         // $totalAmountCents = intval($totalCost * 100);
         $order_id = time() . rand(100000, 999999);
 
         $requestData = $request->all();
-        $requestData['carid'] = (int)$requestData['carid']; // Convert to integer
-        $requestData['pickup_date'] = date('Y-m-d', strtotime($requestData['pickup_date'])); // Format date
-        $requestData['pickup_time'] = date('H:i', strtotime($requestData['pickup_time'])); // Format time
-        $requestData['drop_time'] = date('H:i', strtotime($requestData['drop_time'])); // Format time
-        $requestData['rent_type'] = (int)$requestData['rent_type']; // Convert to integer
-        $requestData['customer_name'] = trim($requestData['customer_name']); // Remove leading and trailing spaces
-        $requestData['contact_number'] = (int)$requestData['contact_number']; // Convert to integer
-        $requestData['order_id'] = $order_id; // Convert to integer
+        $requestData['carid'] = (int)$requestData['carid']; 
+        $requestData['pickup_date'] = date('Y-m-d', strtotime($requestData['pickup_date'])); 
+        $requestData['pickup_time'] = date('H:i', strtotime($requestData['pickup_time']));
+        $requestData['drop_time'] = date('H:i', strtotime($requestData['drop_time'])); 
+        $requestData['rent_type'] = (int)$requestData['rent_type']; 
+
+        $requestData['customer_name'] = trim($requestData['customer_name']);
+        $requestData['contact_number'] = (int)$requestData['phone']; 
+        $requestData['email'] = $requestData['email'];
+        $requestData['address'] = $requestData['address']; 
+        $requestData['address2'] = $requestData['address2'];
+        $requestData['country'] = $requestData['country']; 
+
+        $requestData['order_id'] = $order_id; 
         $requestData['totalCost'] = $totalCost;
 
 
         // dd($requestData);
         // return false;
+
         $saveBooking = Rental::create($requestData);
 
         return redirect('admin/booking-list')->with('success', 'Booking saved successfully');
@@ -279,7 +289,7 @@ class DashboardController extends Controller
     }
     public function contact()
     {
-        $contact = Contact::first(); // Retrieve the first contact record
+        $contact = Contact::first(); 
         return view('admin.pages.contact', compact('contact'));
     }
     public function update_contact(Request $request)

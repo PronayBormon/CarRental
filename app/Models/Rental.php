@@ -23,6 +23,10 @@ class Rental extends Model
         'rent_type',
         'customer_name',
         'contact_number',
+        'email',
+        'address',
+        'address2',
+        'country',
         'approval_status',
         'payment_status',
     ];
